@@ -13,6 +13,10 @@ const Recipes = async ({params}:{params: Promise<{id:string,category : string}>}
             <p>{item.name}</p>
             <p>{item.category}</p>
             <Image src={item.image} alt={item.name} width={100} height={100} />
+            <h3>Instruction</h3>
+            <p>{item.instructions}</p>
+            <h3>Required Ingredients</h3>
+            {item.requiredIngredients.map((item,index)=><li key={index}>{item}</li>)}
         </div>)}
         </>
     )

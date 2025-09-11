@@ -35,6 +35,18 @@ export const getDetailedRecipe = async (id:string) => {
     try{
         const response = await fetch(`${API_ENDPOINT}/lookup.php?i=${id}`)
         const data = await response.json()
+         const meal = data.meals[0]
+         
+         let requiredMeasurementArray:string[] = []
+         const ingredientsKey = Object.keys(meal).filter(item => item.includes("strIngredient"));
+         for(let i = 0; i < ingredientsKey.length; i++) {
+            if (meal[ingredientsKey[i]]) {
+                requiredMeasurementArray.push(meal[ingredientsKey[i]] + "-" + meal[`strMeasure${i+1}`])
+            }else{
+                break;
+            }
+        }
+        
         return data.meals.map((meal: any) => ({
             mealId: meal.idMeal,
             name: meal.strMeal,
@@ -43,7 +55,9 @@ export const getDetailedRecipe = async (id:string) => {
             instructions : meal.strInstructions,
             image:meal.strMealThumb,
             video:meal.strYoutube,
+             requiredIngredients:requiredMeasurementArray
         }))
+        
     }catch(error){
         console.log(error)
     }
