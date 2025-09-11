@@ -5,6 +5,7 @@ import { UserContextProvider } from "@/utils/context";
 import LogInWrapper from "@/components/LogInWrapper";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <LogInWrapper>
             <Navigation />
             {children}
+         
           </LogInWrapper>
         </UserContextProvider>
       </body>

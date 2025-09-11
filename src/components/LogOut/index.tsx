@@ -9,6 +9,7 @@ const LogOut = ({click}:LogOutProp) => {
     return (
         <>
             <button onClick={click}>Logout</button>
+            
         </>
     )
 }
