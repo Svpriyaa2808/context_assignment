@@ -4,7 +4,6 @@ import LogOut from "@/components/LogOut";
 import { useUserContext } from "@/utils/context";
 import { getCategoryRecipes } from "@/utils/function";
 import { MealType, UserContextType } from "@/utils/types";
-import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 
 export default function Home() {

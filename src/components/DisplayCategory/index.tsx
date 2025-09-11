@@ -3,6 +3,7 @@ import { MealType } from "@/utils/types"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import FavouriteIcon from "../FavouriteIcon"
 
 type RecipeProp = {
     meals : MealType[],
@@ -22,7 +23,9 @@ const isHome = location === "/"
                             {isHome ? <Link href={`category/${category}/${item.idMeal}`}>{item.strMeal}</Link> :
                             <Link href={`${category}/${item.idMeal}`}>{item.strMeal}</Link>  }
                             <Image className="h-auto w-[50%]" src={item.strMealThumb} alt={item.strMeal} width={100} height={100} />
+                            <FavouriteIcon />
                             </div>
+            
                     ))}
         </div>
     )

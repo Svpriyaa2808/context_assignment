@@ -9,6 +9,11 @@ export interface UserContextType {
     setUser : (user:UserType|null) => void
 }
 
+export interface FavContextType {
+    favRecipes : MealType | null,
+    setFavRecipes : (meal:MealType|null) => void 
+}
+
 export interface NavItemsType {
     name:string,
     link:string
