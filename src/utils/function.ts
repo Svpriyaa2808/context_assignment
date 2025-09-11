@@ -30,3 +30,21 @@ export const getAllCategory = async () => {
     console.log(error)
   }
 }
+
+export const getDetailedRecipe = async (id:string) => {
+    try{
+        const response = await fetch(`${API_ENDPOINT}/lookup.php?i=${id}`)
+        const data = await response.json()
+        return data.meals.map((meal: any) => ({
+            mealId: meal.idMeal,
+            name: meal.strMeal,
+            category:meal.strCategory,
+            area:meal.strArea,
+            instructions : meal.strInstructions,
+            image:meal.strMealThumb,
+            video:meal.strYoutube,
+        }))
+    }catch(error){
+        console.log(error)
+    }
+}

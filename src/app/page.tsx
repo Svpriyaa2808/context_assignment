@@ -1,5 +1,5 @@
 'use client'
-import DisplayRecipe from "@/components/DisplayRecipe";
+import DisplayCategory from "@/components/DisplayCategory";
 import { useUserContext } from "@/utils/context";
 import { getCategoryRecipes } from "@/utils/function";
 import { MealType, UserContextType } from "@/utils/types";
@@ -26,7 +26,7 @@ export default function Home() {
     {user && 
     <div>
       welcome to website, {user.name}
-      {user.favouriteCategory && recipe ? <DisplayRecipe meals={recipe}/> : <p>No Category</p>}
+      {user.favouriteCategory && recipe ? <DisplayCategory meals={recipe} category={user.favouriteCategory}/> : <p>No Category</p>}
     </div>}
    </div>
   );

@@ -1,4 +1,4 @@
-import DisplayRecipe from "@/components/DisplayRecipe"
+import DisplayRecipe from "@/components/DisplayCategory"
 import { getCategoryRecipes } from "@/utils/function"
 import { MealType } from "@/utils/types"
 
@@ -8,9 +8,9 @@ const SelectedCategory = async ({ params }: { params: Promise<{ category: string
 
   return (
     <div>
-      {meals.length > 0 && <DisplayRecipe meals={meals} />}
+      {meals.length > 0 && <DisplayRecipe meals={meals} category={category}/>}
     </div>
   )
 }
 
-export default SelectedCategory
+export default SelectedCategory 

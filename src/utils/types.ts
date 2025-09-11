@@ -15,15 +15,27 @@ export interface NavItemsType {
 }
 
 export interface MealType {
-    mealId: string,
+    idMeal: string,
     strMeal: string,
     strMealThumb : string
 }
 
 export interface CategoryType {
     idCategory: string
-  strCategory: string
-  strCategoryThumb: string
-  strCategoryDescription: string
+    strCategory: string
+    strCategoryThumb: string
+    strCategoryDescription: string
 }
+
+export interface RecipeType {
+    id: string,
+    name: string,
+    category: string,
+    area: string,
+    instructions: string,
+    image:string,
+    video : string,
+    requiredIngredients:string[]
+}
+
 
