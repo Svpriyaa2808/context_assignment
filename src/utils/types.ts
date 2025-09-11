@@ -6,7 +6,7 @@ export interface UserType {
 
 export interface UserContextType {
     user : UserType | null,
-    setUser : (user:UserType) => void
+    setUser : (user:UserType|null) => void
 }
 
 export interface NavItemsType {
