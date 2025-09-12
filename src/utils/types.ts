@@ -1,28 +1,31 @@
+export interface MealType {
+    idMeal: string,
+    strMeal: string,
+    strMealThumb : string
+}
+
+
+export interface FavouriteRecipeType extends MealType {
+  category: string;   
+}
+
 export interface UserType {
-    name:string,
-    favouriteCategory : string | null,
-    favouriteRecipes : string []
+  name: string;
+  favouriteCategory: string | null;
+  favouriteRecipes: FavouriteRecipeType[];
 }
 
 export interface UserContextType {
     user : UserType | null,
     setUser : (user:UserType|null) => void
-}
-
-export interface FavContextType {
-    favRecipes : MealType | [],
-    setFavRecipes : (meal:MealType|[]) => void 
+    setFavouriteCategory: (category: string) => void;
+  addFavouriteRecipe: (recipe: FavouriteRecipeType) => void;
+  removeFavouriteRecipe: (id: string) => void;
 }
 
 export interface NavItemsType {
     name:string,
     link:string
-}
-
-export interface MealType {
-    idMeal: string,
-    strMeal: string,
-    strMealThumb : string
 }
 
 export interface CategoryType {

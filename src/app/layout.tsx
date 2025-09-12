@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { FavouriteContextProvider, UserContextProvider } from "@/utils/context";
+import {  UserContextProvider } from "@/utils/context";
 import LogInWrapper from "@/components/LogInWrapper";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
@@ -34,12 +34,12 @@ export default function RootLayout({
       >
         <Header />
         <UserContextProvider>
-          <FavouriteContextProvider>
+   
           <LogInWrapper>
             <Navigation />
             {children}
           </LogInWrapper>
-          </FavouriteContextProvider>
+          
         </UserContextProvider>
       </body>
     </html>
