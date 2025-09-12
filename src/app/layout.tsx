@@ -35,8 +35,7 @@ export default function RootLayout({
         
         <UserContextProvider>
           <LogInWrapper>
-            <Header />
-            
+            <Header />   
             {children}
           </LogInWrapper>          
         </UserContextProvider>

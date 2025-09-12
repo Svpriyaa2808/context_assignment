@@ -11,12 +11,8 @@ const LogOut = ({click}:LogOutProp) => {
 
     const {user} = useUserContext() as UserContextType
 
-    return (
-        <div className="bg-amber-200">  
-            
-            <button onClick={click}>Logout</button>
-            
-        </div>
+    return (   
+        <button className="m-4 p-2 rounded-2xl cursor-pointer bg-amber-800 text-white text-xl md:text-2xl" onClick={click}>Logout</button>
     )
 }
 

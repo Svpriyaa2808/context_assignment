@@ -28,7 +28,8 @@ const LogInForm = () => {
     return (
         <>
         <Header />
-        <form className="flex flex-col max-w-[400px] rounded-2xl border-amber-800 border-2 m-auto mt-8 shadow-2xl  p-4">
+        <div className="grow flex flex-col justify-center ">
+        <form className="flex flex-col max-w-[400px] rounded-2xl border-amber-800 border-2 m-auto shadow-2xl  p-4">
             <h2 className="text-center font-bold text-3xl mb-4 text-[#FA824C] uppercase">LogIn!</h2>
             <div className="flex justify-center m-4">
                 <label htmlFor="username" className="m-2">Username</label>
@@ -44,6 +45,7 @@ const LogInForm = () => {
 
             {!userNotFound && <p>User Not found</p>}
         </form>
+        </div>
         </>
     )
 }

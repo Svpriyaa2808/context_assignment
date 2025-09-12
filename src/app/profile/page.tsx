@@ -10,7 +10,6 @@ const ProfilePage = () => {
   if (user) {
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold">Welcome, {user.name} 👋</h1>
       
       <div className="mt-4">
         <p className="font-semibold">Favourite Category:</p>
