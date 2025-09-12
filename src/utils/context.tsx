@@ -7,7 +7,7 @@ const UserContext = createContext<UserContextType | null>(null)
 export const UserContextProvider = ({ children } : {children :  React.ReactNode} ) => {
     const [user,setUser] = useState<UserType | null>(null)
     return (
-        <UserContext.Provider value={{user,setUser}}>
+        <UserContext.Provider value={{user, setUser}}>
             {children}
         </UserContext.Provider>
     )
@@ -17,10 +17,12 @@ export const useUserContext = () => {
     return useContext (UserContext) 
 }
 
-const FavouriteContext = createContext<FavContextType | null>(null)
+const FavouriteContext = createContext<FavContextType | []>([])
 
 export const FavouriteContextProvider = ({children}:{children : React.ReactNode}) => {
-    const [favRecipes,setFavRecipes] = useState<MealType|null>(null)
+    const [favRecipes,setFavRecipes] = useState<MealType|[]>([])
+
+    
 
     return (
         <FavouriteContext.Provider value={{favRecipes,setFavRecipes}}>

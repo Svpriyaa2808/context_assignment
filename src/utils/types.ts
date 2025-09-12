@@ -10,8 +10,8 @@ export interface UserContextType {
 }
 
 export interface FavContextType {
-    favRecipes : MealType | null,
-    setFavRecipes : (meal:MealType|null) => void 
+    favRecipes : MealType | [],
+    setFavRecipes : (meal:MealType|[]) => void 
 }
 
 export interface NavItemsType {

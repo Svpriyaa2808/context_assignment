@@ -1,17 +1,23 @@
 import { useState } from "react"
 import Image from "next/image"
+import { MealType } from "@/utils/types"
 
-const FavouriteIcon = () => {
+const FavouriteIcon = ({favourites}:{favourites:(item:MealType)=>void}) => {
 
     const [favIcon,setFavIcon] = useState<string>("unfavourite_icon.png")
     
-    const handleFav = () => {
-        favIcon==="unfavourite_icon.png" ? setFavIcon("favourite_icon.png") : setFavIcon("unfavourite_icon.png")
+    const handleFav = (item:MealType) => {
+        if(favIcon==="unfavourite_icon.png") {
+            setFavIcon("favourite_icon.png")
+            favourites(item)
+        } else{
+            setFavIcon("unfavourite_icon.png")
+        } 
     }
    
     return (
         <>
-            <Image onClick={handleFav} src={`/${favIcon}`} alt={favIcon} width={50} height={50} />
+            <Image onClick={()=>handleFav()} src={`/${favIcon}`} alt={favIcon} width={50} height={50} />
         </>
     )
 }
