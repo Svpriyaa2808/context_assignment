@@ -22,7 +22,7 @@ const FavouriteContext = createContext<FavContextType | []>([])
 export const FavouriteContextProvider = ({children}:{children : React.ReactNode}) => {
     const [favRecipes,setFavRecipes] = useState<MealType|[]>([])
 
-    
+  
 
     return (
         <FavouriteContext.Provider value={{favRecipes,setFavRecipes}}>
