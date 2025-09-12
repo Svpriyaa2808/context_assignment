@@ -34,7 +34,6 @@ export default function Home() {
    <div>
     {user && 
     <div>
-      welcome to website, {user.name}
       <LogOut click={handleClick}/>
       {user.favouriteCategory && recipe ? <DisplayCategory meals={recipe} category={user.favouriteCategory}/> : <p>No Category</p>}
     </div>}

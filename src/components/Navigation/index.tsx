@@ -3,8 +3,8 @@ import Link from "next/link"
 
 const Navigation = () => {
     return (
-        <nav>
-            {NavItems.map((item,index)=><Link key={index} href={item.link}>{item.name}</Link>)}
+        <nav className="flex justify-around pt-8 mt-8">
+            {NavItems.map((item,index)=><Link className="text-2xl font-bold uppercase text-amber-800" key={index} href={item.link}>{item.name}</Link>)}
         </nav>
     )
 }

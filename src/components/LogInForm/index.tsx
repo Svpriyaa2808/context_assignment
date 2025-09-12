@@ -3,7 +3,7 @@ import { UserArray } from "@/data/users"
 import { useState } from "react"
 import { useUserContext } from "@/utils/context"
 import { UserContextType } from "@/utils/types"
-
+import Header from "../Header"
 const LogInForm = () => {
     const [userInput,setUserInput] = useState<string>('')
     const [userNotFound,setUserNotFound] = useState<boolean>(true)
@@ -26,6 +26,8 @@ const LogInForm = () => {
     }
 
     return (
+        <>
+        <Header />
         <form className="flex flex-col max-w-[400px] rounded-2xl border-amber-800 border-2 m-auto mt-8 shadow-2xl  p-4">
             <h2 className="text-center font-bold text-3xl mb-4 text-[#FA824C] uppercase">LogIn!</h2>
             <div className="flex justify-center m-4">
@@ -42,6 +44,7 @@ const LogInForm = () => {
 
             {!userNotFound && <p>User Not found</p>}
         </form>
+        </>
     )
 }
 
