@@ -18,18 +18,18 @@ const DisplayCategory = ({meals,category}:RecipeProp) => {
     const {user,addFavouriteRecipe,removeFavouriteRecipe}  = useUserContext() as UserContextType
 
     return (
-        <div className="flex flex-wrap m-auto">
+        <div className="flex flex-wrap">
             {meals.map((item, index) => (
-                <div key={index} className="flex-[35%] m-4">
-                    {isHome ? <Link href={`category/${category}/${item.idMeal}`}>{item.strMeal}</Link> 
-                            : <Link href={`${category}/${item.idMeal}`}>{item.strMeal}</Link> 
+                <div key={index} className="flex-[30%] border-2 rounded-2xl m-4 flex flex-col items-center shadow-2xl">
+                    {isHome ? <Link href={`category/${category}/${item.idMeal}`} className="uppercase italic font-bold m-2 text-xl text-amber-800">{item.strMeal}</Link> 
+                            : <Link href={`${category}/${item.idMeal}`} className="uppercase italic font-bold m-2 text-xl">{item.strMeal}</Link> 
                      }
                     
-                    <Image className="h-auto w-[50%]" src={item.strMealThumb} alt={item.strMeal} width={100} height={100} />
+                    <Image className="h-auto w-[75%]" src={item.strMealThumb} alt={item.strMeal} width={100} height={100} />
                     <Image src={user?.favouriteRecipes.some(r => r.idMeal === item.idMeal) ? "/favourite_icon.png" : "/unfavourite_icon.png"}
-                        alt="fav"  onClick={() =>user?.favouriteRecipes.some(r => r.idMeal === item.idMeal)
+                        alt="fav" className="m-2 w-[10%] h-auto cursor-pointer"  onClick={() =>user?.favouriteRecipes.some(r => r.idMeal === item.idMeal)
                                                         ? removeFavouriteRecipe(item.idMeal)
-                                                        : addFavouriteRecipe({ ...item, category })} width={30} height={30}/>
+                                                        : addFavouriteRecipe({ ...item, category })} width={100} height={100}/>
 
                 </div>
             ))}

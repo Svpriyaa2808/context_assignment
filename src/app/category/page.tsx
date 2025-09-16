@@ -24,14 +24,17 @@ const CategoryPage = () => {
     return (
         <>
         {allCategory && 
-        <div>
+        <div className="flex flex-wrap  justify-center">
             {allCategory.map((item,index)=>
-            <div key={index}>
+            <div key={index} className="flex-[60%]">
+                <div className="flex">
                 <Image src={item.strCategoryThumb} alt={item.strCategory} width={50} height={50}></Image>
+                 <Image src={user?.favouriteCategory === item.strCategory ? "/favourite_icon.png" : "/unfavourite_icon.png"} alt="fav"
+                    onClick={() => setFavouriteCategory(item.strCategory)}  width={30} height={30}/>
+                    </div>
                 <Link href={`category/${item.strCategory}`}>{item.strCategory}</Link>
                 <p>{item.strCategoryDescription}</p>
-                <Image src={user?.favouriteCategory === item.strCategory ? "/favourite_icon.png" : "/unfavourite_icon.png"} alt="fav"
-                    onClick={() => setFavouriteCategory(item.strCategory)}  width={30} height={30}/>
+               
             </div>
             )}
         </div>
