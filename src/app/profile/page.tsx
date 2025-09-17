@@ -8,6 +8,8 @@ import Link from "next/link";
 
 const ProfilePage = () => {
   const { user} = useUserContext() as UserContextType;
+  // Example: To log categories of all favourite recipes, uncomment below
+   console.log(user?.favouriteRecipes.map(recipe => recipe.category));
 
   if (user) {
   return (
@@ -25,16 +27,19 @@ const ProfilePage = () => {
         ) : (
           <div className="flex flex-wrap justify-center">
               <p className="flex-[100%] text-center italic font-bold text-2xl m-8 text-amber-800">Here are the Favourite recipes of {user.name}</p>
-             
-              <DisplayCategory meals={user.favouriteRecipes} category={user.favouriteCategory || ""}/>
-             
+              <div className="flex flex-wrap justify-center">
+                {user.favouriteRecipes.map((recipe, index) => (
+                  <div key={index} className="m-4">
+                    <DisplayCategory meals={[recipe]} category={recipe.category} />
+                  </div>
+                ))}
               </div>
-            )
+          </div>
+          )
         }
       </div>
     </div>
   );
 }
 };
-
-export default ProfilePage;
+export default ProfilePage
