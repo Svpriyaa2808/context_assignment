@@ -9,6 +9,7 @@ import { useUserContext } from "@/utils/context"
 const CategoryPage = () => {
    const [allCategory,setAllCategory] = useState<CategoryType[]|null>(null)
     const {user,setFavouriteCategory} = useUserContext() as UserContextType
+
     useEffect(()=>{
         const fetchCategory = async () => {
             const data = await getAllCategory()

@@ -10,7 +10,7 @@ type RecipeProp = {
   category?: string;
 };
 
-const DisplayCategory = ({ meals, category }: RecipeProp) => {
+const DisplayRecipe = ({ meals, category }: RecipeProp) => {
   const location = usePathname();
  const isHome = ["/", "/profile"].includes(location);
 
@@ -75,4 +75,4 @@ const DisplayCategory = ({ meals, category }: RecipeProp) => {
   );
 };
 
-export default DisplayCategory;
+export default DisplayRecipe;

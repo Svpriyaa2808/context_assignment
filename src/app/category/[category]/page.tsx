@@ -1,4 +1,4 @@
-import DisplayRecipe from "@/components/DisplayCategory"
+import DisplayRecipe from "@/components/DisplayRecipe"
 import { getCategoryRecipes } from "@/utils/function"
 import { MealType } from "@/utils/types"
 

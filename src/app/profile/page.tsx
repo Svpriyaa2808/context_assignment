@@ -1,15 +1,10 @@
 'use client'
-import DisplayCategory from "@/components/DisplayCategory";
+import DisplayRecipe from "@/components/DisplayRecipe";
 import { useUserContext } from "@/utils/context";
 import { UserContextType } from "@/utils/types";
-import Image from "next/image";
-import Link from "next/link";
-
 
 const ProfilePage = () => {
   const { user} = useUserContext() as UserContextType;
-  // Example: To log categories of all favourite recipes, uncomment below
-   console.log(user?.favouriteRecipes.map(recipe => recipe.category));
 
   if (user) {
   return (
@@ -25,15 +20,15 @@ const ProfilePage = () => {
         {user.favouriteRecipes.length === 0 ? (
           <p className="text-center italic font-bold text-2xl m-4 text-amber-800">Add Favourites that satisfy your cravings</p>
         ) : (
-          <div className="flex flex-wrap justify-center">
-              <p className="flex-[100%] text-center italic font-bold text-2xl m-8 text-amber-800">Here are the Favourite recipes of {user.name}</p>
-              <div className="flex flex-wrap justify-center">
+          <div className="">
+              <p className=" text-center italic font-bold text-2xl m-8 text-amber-800">Here are the Favourite recipes of {user.name}</p>
+             
                 {user.favouriteRecipes.map((recipe, index) => (
-                  <div key={index} className="m-4">
-                    <DisplayCategory meals={[recipe]} category={recipe.category} />
+                  <div key={index}>
+                    <DisplayRecipe meals={[recipe]} category={recipe.category} />
                   </div>
                 ))}
-              </div>
+             
           </div>
           )
         }

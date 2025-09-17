@@ -14,7 +14,7 @@ export  const getRandomRecipe = async ()=> {
     try {
       const response = await fetch(`${API_ENDPOINT}random.php`)
       const data = await response.json()
-      console.log(data)
+      return data.meals
     }catch(error){
       console.log(error)
     }
