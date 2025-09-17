@@ -30,12 +30,14 @@ const CategoryPage = () => {
                 <div className="flex justify-between">
                     <Link className="text-left text-2xl font-bold italic uppercase p-2 m-3 text-amber-800" href={`category/${item.strCategory}`}>{item.strCategory}</Link>
                
-                 <Image src={user?.favouriteCategory?.toLowerCase() === item.strCategory.toLowerCase() ? "/favourite_icon.png" : "/unfavourite_icon.png"} alt="fav"
-                    onClick={() => setFavouriteCategory(item.strCategory)}  width={100} height={100} className="h-auto w-[15%] lg:w-[10%] m-3 p-2"/>
-                    </div>
-                    <div className="flex justify-center">
-                 <Image src={item.strCategoryThumb} alt={item.strCategory} width={100} height={100} className="h-auto w-[50%] lg:w-[35%]"></Image>
-                 </div>
+                    <Image src={user?.favouriteCategory?.toLowerCase() === item.strCategory.toLowerCase() ? "/favourite_icon.png" : "/unfavourite_icon.png"} alt="fav"
+                        onClick={() => setFavouriteCategory(item.strCategory)}  width={100} height={100} className="h-auto w-[15%] lg:w-[10%] m-3 p-2"/>
+                </div>
+                
+                <div className="flex justify-center">
+                    <Image src={item.strCategoryThumb} alt={item.strCategory} width={100} height={100} className="h-auto w-[50%] lg:w-[35%]"></Image>
+                </div>
+                
                 <p className="m-3 text-justify indent-[30px] text-[18px]">{item.strCategoryDescription}</p>
                
             </div>
