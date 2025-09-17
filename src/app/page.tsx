@@ -24,7 +24,7 @@ export default function Home() {
   return (
   
     user && 
-    <div > 
+    <div className="bg-amber-50"> 
       {user.favouriteCategory && recipe ? <DisplayCategory meals={recipe} category={user.favouriteCategory}/> : <p>No Category</p>}
     </div>
 
