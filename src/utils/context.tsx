@@ -9,7 +9,10 @@ export const UserContextProvider = ({ children } : {children :  React.ReactNode}
 
     const setFavouriteCategory = (category: string) => {
     if (!user) return;
-    setUser({ ...user, favouriteCategory: category });
+     setUser({
+      ...user,
+      favouriteCategory: category,
+    });
     };
 
     const addFavouriteRecipe = (recipe: FavouriteRecipeType) => {

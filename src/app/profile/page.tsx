@@ -7,25 +7,27 @@ import Link from "next/link";
 
 
 const ProfilePage = () => {
-  const { user, removeFavouriteRecipe } = useUserContext() as UserContextType;
+  const { user} = useUserContext() as UserContextType;
 
   if (user) {
   return (
-    <div className="p-6">
+    <div className="p-6 bg-amber-50">
       
       <div className="mt-4">
-        <p className="font-semibold">Favourite Category:</p>
-        <p className="text-blue-600">{user.favouriteCategory || "None"}</p>
+        <p className="font-bold text-center text-xl">{user.name ? `${user.name}'s Favourite Category:` : "Favourite Category:"}</p>
+        <p className="text-center italic font-bold text-2xl m-4 text-amber-800">{user.favouriteCategory || "None"}</p>
       </div>
 
       <div className="mt-6">
-        <p className="font-semibold">Favourite Recipes:</p>
+        <p className="font-bold text-center text-xl">{user.name ? `${user.name}'s Favourite Recipes:` : "Favourite Recipes:"}</p>
         {user.favouriteRecipes.length === 0 ? (
-          <p className="text-gray-500">No favourite recipes yet.</p>
+          <p className="text-center italic font-bold text-2xl m-4 text-amber-800">Add Favourites that satisfy your cravings</p>
         ) : (
-          <div className="grid grid-cols-2 gap-6 mt-4">
-            
+          <div className="flex flex-wrap justify-center">
+              <p className="flex-[100%] text-center italic font-bold text-2xl m-8 text-amber-800">Here are the Favourite recipes of {user.name}</p>
+             
               <DisplayCategory meals={user.favouriteRecipes} category={user.favouriteCategory || ""}/>
+             
               </div>
             )
         }

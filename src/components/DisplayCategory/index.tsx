@@ -18,9 +18,9 @@ const DisplayCategory = ({meals,category}:RecipeProp) => {
     const {user,addFavouriteRecipe,removeFavouriteRecipe}  = useUserContext() as UserContextType
 
     return (
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center bg-amber-50">
             {meals.map((item, index) => (
-                <div key={index} className="flex-[50%] md:flex-[30%] border-2 rounded-2xl m-4 flex flex-col items-center shadow-2xl">
+                <div key={index} className="basis-1/2  md:basis-1/3 max-w-sm  border-2 rounded-2xl m-4 flex flex-col items-center shadow-2xl">
                     {isHome ? <Link href={`category/${category}/${item.idMeal}`} className="uppercase italic font-bold m-4 text-xl text-amber-800">{item.strMeal}</Link> 
                             : <Link href={`${category}/${item.idMeal}`} className="uppercase italic font-bold m-4 text-xl">{item.strMeal}</Link> 
                      }
