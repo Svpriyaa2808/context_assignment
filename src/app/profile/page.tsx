@@ -1,8 +1,10 @@
 'use client'
+import DisplayCategory from "@/components/DisplayCategory";
 import { useUserContext } from "@/utils/context";
 import { UserContextType } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
+
 
 const ProfilePage = () => {
   const { user, removeFavouriteRecipe } = useUserContext() as UserContextType;
@@ -22,23 +24,11 @@ const ProfilePage = () => {
           <p className="text-gray-500">No favourite recipes yet.</p>
         ) : (
           <div className="grid grid-cols-2 gap-6 mt-4">
-            {user.favouriteRecipes.map((recipe,index) => (
-              <div key={index} className="border rounded-lg p-3 shadow">
-                <Image
-                  src={recipe.strMealThumb}
-                  alt={recipe.strMeal}
-                  width={200}
-                  height={200}
-                  className="rounded-md"
-                />
-                <Link href={`category/${recipe.category}/${recipe.idMeal}`} className="mt-2 font-medium">{recipe.strMeal}</Link>
-                <button onClick={() => removeFavouriteRecipe(recipe.idMeal)} className="mt-2 text-sm text-red-500 hover:underline">
-                  Remove
-                </button>
+            
+              <DisplayCategory meals={user.favouriteRecipes} category={user.favouriteCategory || ""}/>
               </div>
-            ))}
-          </div>
-        )}
+            )
+        }
       </div>
     </div>
   );
