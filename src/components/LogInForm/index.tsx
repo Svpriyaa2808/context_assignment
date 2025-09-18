@@ -29,7 +29,7 @@ const LogInForm = () => {
         <>
         <Header />
         <div className="grow flex flex-col justify-center m-4">
-        <form className="flex flex-col max-w-[400px] rounded-2xl border-amber-800 border-2 m-auto shadow-2xl mt-4  p-4">
+        <form className="flex flex-col max-w-[400px] rounded-2xl border-amber-800 border-2 m-auto shadow-2xl my-4  p-4">
             <h2 className="text-center font-bold text-3xl mb-4 text-[#FA824C] uppercase">LogIn!</h2>
             <div className="flex justify-center m-4">
                 <label htmlFor="username" className="m-2">Username</label>

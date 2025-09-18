@@ -4,7 +4,7 @@ import Navigation from "../Navigation"
 
 const Footer = () => {
     return (
-        <footer className="bg-amber-100 mt-0 p-4">
+        <footer className="bg-[#FCDFA6] mt-0 p-4">
             <div className="flex justify-between">
                 <div className="flex justify-start flex-[40%]">
                     <Image src={Logo} alt="logo" width={0} height={0} sizes="100vw" priority className="h-[auto] w-[75%] xs:w-[40%] sm:w-[35%] md:w-[25%] lg:w-[20%]"/> 

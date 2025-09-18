@@ -24,13 +24,13 @@ const Header = () => {
                         <Navigation />
                     </div> 
                 </div>
-                <div className="flex justify-between mt-6 md:mt-3 shadow-2xl bg-[#F4B886]">
+                <div className="flex justify-between mt-6 md:mt-3 shadow-2xl bg-[#FCDFA6]">
                     <h2 className="font-bold text-2xl md:text-3xl p-4 text-amber-800 ">Welcome {user.name} 👋</h2>
                     <LogOut click={handleClick}/>
                 </div>
             </header>
         ) : (
-            <header className="text-center  bg-amber-200">
+            <header className="text-center  bg-[#FCDFA6]">
                 <div className="flex justify-center">
                     <Image src={Logo} alt="logo" width={0} height={0} sizes="100vw" priority className="h-[auto] w-[50%] md:w-[25%] lg:w-[20%]"/> 
                 </div>  
