@@ -23,7 +23,7 @@ const DisplayRecipe = ({ meals, category }: RecipeProp) => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center bg-amber-50">
+    <div className="flex flex-wrap justify-center my-4 bg-amber-50">
       {meals.map((item, index) => (
         <div
           key={index}
