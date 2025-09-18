@@ -16,7 +16,6 @@ export default function Home() {
       if(user?.favouriteCategory){
         const data = await getCategoryRecipes(user.favouriteCategory)
         setRecipe(data)
-        console.log(data)
       } else {
         const data = await getRandomRecipe()
         setRecipe(data)
@@ -33,7 +32,7 @@ export default function Home() {
       {!user.favouriteCategory && recipe && (
         <>
       <p className="text-center font-bold text-amber-800 text-[20px] m-4">Random Meal for you {user.name}</p>
-      <DisplayRecipe meals={recipe} />
+      <DisplayRecipe meals={recipe} category={recipe[0].strCategory}/>
       </>)
       }
     </div>

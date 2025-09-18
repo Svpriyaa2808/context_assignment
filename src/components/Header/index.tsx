@@ -15,16 +15,16 @@ const Header = () => {
   }
     return (
         user ? (
-            <header className=" bg-amber-200">
+            <header className=" bg-[#FCDFA6]">
                 <div className="flex flex-col justify-between md:flex-row">
                     <div className="flex justify-center md:justify-start md:flex-[40%]">
                         <Image src={Logo} alt="logo" width={0} height={0} sizes="100vw" priority className="h-[auto] w-[50%] sm:w-[25%] md:w-[50%]"/> 
                     </div> 
-                    <div className="md:flex-[60%] md:justify-end">
+                    <div className="md:flex-[60%] md:justify-end ">
                         <Navigation />
                     </div> 
                 </div>
-                <div className="flex justify-between mt-6 md:mt-3">
+                <div className="flex justify-between mt-6 md:mt-3 shadow-2xl bg-[#F4B886]">
                     <h2 className="font-bold text-2xl md:text-3xl p-4 text-amber-800 ">Welcome {user.name} 👋</h2>
                     <LogOut click={handleClick}/>
                 </div>

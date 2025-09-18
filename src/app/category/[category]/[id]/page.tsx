@@ -9,7 +9,7 @@ const Recipes = async ({params}:{params: Promise<{id:string,category : string}>}
     return (
         <div className="bg-amber-50 flex justify-center grow ">
             {detailedRecipe && detailedRecipe.map((item,index)=> 
-            <div key={index} className="bg-amber-200 max-w-[300px] xs:max-w-[400px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] my-8 text-center rounded-2xl">
+            <div key={index} className="bg-amber-100 max-w-[300px] xs:max-w-[400px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] my-8 text-center rounded-2xl">
                 
                 <h2 className="font-bold italic text-2xl text-amber-800 text-center m-4">{item.name}</h2>
                 

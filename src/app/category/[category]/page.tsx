@@ -8,7 +8,7 @@ const SelectedCategory = async ({ params }: { params: Promise<{ category: string
 
   return (
     <div>
-      {meals.length > 0 && <DisplayRecipe meals={meals} category={category}/>}
+      {meals && <DisplayRecipe meals={meals} category={category}/>}
     </div>
   )
 }

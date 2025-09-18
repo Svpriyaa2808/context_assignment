@@ -27,7 +27,8 @@ const DisplayRecipe = ({ meals, category }: RecipeProp) => {
       {meals.map((item, index) => (
         <div
           key={index}
-          className="basis-[100%] md:basis-1/3 max-w-sm border-2 rounded-2xl m-4 flex flex-col items-center shadow-2xl"
+          className="basis-[100%] md:basis-1/3 max-w-sm border-2 rounded-2xl m-4 flex flex-col items-center shadow-2xl
+                      lg:transition-transform duration-300 hover:scale-105 hover:shadow-yellow-400"
         >
           <Link
             href={
