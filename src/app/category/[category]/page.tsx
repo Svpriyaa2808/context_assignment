@@ -7,7 +7,7 @@ const SelectedCategory = async ({ params }: { params: Promise<{ category: string
   const meals: MealType[] = await getCategoryRecipes(category)
 
   return (
-    <div>
+    <div className="grow">
       {meals && <DisplayRecipe meals={meals} category={category}/>}
     </div>
   )

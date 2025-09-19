@@ -8,7 +8,7 @@ const ProfilePage = () => {
 
   if (user) {
   return (
-    <div className="p-6 bg-amber-50">
+    <div className="grow p-6 bg-amber-50">
       
       <div className="mt-4">
         <p className="font-bold text-center text-xl">{user.name ? `${user.name}'s Favourite Category:` : "Favourite Category:"}</p>
